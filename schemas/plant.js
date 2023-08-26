@@ -10,7 +10,7 @@ const PlantSchema = new mongoose.Schema({
     },
     size: {
       type: String,
-      enum: ['big', 'small'],
+      enum: ['big', 'medium', 'small'],
       required: true
     },
     img: {
