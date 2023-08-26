@@ -35,7 +35,7 @@ app.get("/plants", async (req, res) => {
     const allPlants = await Plant.find({});
     const response = {
       success: true,
-      message: "Here are your plants!",
+      message: "All products",
       body: allPlants, // Send the retrieved plants directly in the response
     };
     res.status(200).json(response);
