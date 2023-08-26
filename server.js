@@ -50,8 +50,68 @@ app.get("/plants", async (req, res) => {
   }
 });
 
+// Get all small plants
+app.get("/plants/small", async (req, res) => {
+  try {
+    const smallPlants = await Plant.find({ size: "small" });
+    const response = {
+      success: true,
+      message: `All small plants. Amount: ${smallPlants.length}`,
+      body: smallPlants
+    };
+    res.status(200).json(response);
+  } catch (e) {
+    console.error("Error:", e);
+    res.status(500).json({
+      success: false,
+      body: {
+        message: e,
+      },
+    });
+  }
+});
 
-    
+// Get all medium plants
+app.get("/plants/medium", async (req, res) => {
+  try {
+    const mediumPlants = await Plant.find({ size: "medium" });
+    const response = {
+      success: true,
+      message: `All medium-sized plants. Amount: ${mediumPlants.length}`,
+      body: mediumPlants
+    };
+    res.status(200).json(response);
+  } catch (e) {
+    console.error("Error:", e);
+    res.status(500).json({
+      success: false,
+      body: {
+        message: e,
+      },
+    });
+  }
+});
+
+// Get all big plants
+app.get("/plants/big", async (req, res) => {
+  try {
+    const bigPlants = await Plant.find({ size: "big" });
+    const response = {
+      success: true,
+      message: `All big plants. Amount: ${bigPlants.length}`,
+      body: bigPlants
+    };
+    res.status(200).json(response);
+  } catch (e) {
+    console.error("Error:", e);
+    res.status(500).json({
+      success: false,
+      body: {
+        message: e,
+      },
+    });
+  }
+});
 
 // Start the server
 app.listen(port, () => {
