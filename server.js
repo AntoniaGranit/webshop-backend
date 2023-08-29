@@ -107,10 +107,52 @@ app.get("/plants/big", async (req, res) => {
     res.status(500).json({
       success: false,
       body: {
-        message: e,
+        message: e
       },
     });
   }
+});
+
+app.get("/lowesttohighest", async (req, res) => {
+  try {
+  const sortedPlants = await Plant.find().sort({price: 'asc'});
+  if (sortedPlants) {
+    res.status(200).json({
+      success: true,
+      message: "Plants ordered by price from lowest to highest",
+      body: sortedPlants
+    })
+  }
+} catch (e) {
+  console.error("Error:", e);
+  res.status(500).json({
+    success: false,
+    body: {
+      message: e
+    }
+  })
+}
+});
+
+app.get("/highesttolowest", async (req, res) => {
+  try {
+  const sortedPlants = await Plant.find().sort({price: 'desc'});
+  if (sortedPlants) {
+    res.status(200).json({
+      success: true,
+      message: "Plants ordered by price from highest to lowest",
+      body: sortedPlants
+    })
+  }
+} catch (e) {
+  console.error("Error:", e);
+  res.status(500).json({
+    success: false,
+    body: {
+      message: e
+    }
+  })
+}
 });
 
 // Start the server
