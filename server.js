@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import plantProducts from './data/plants.json';
 import { Plant } from './schemas/plant';
 
 dotenv.config();
@@ -16,6 +15,7 @@ mongoose.set('debug', true);
 const port = process.env.PORT || 8080;
 const app = express();
 const listEndpoints = require('express-list-endpoints');
+dotenv.config();
 
 // Middlewares for cors and json body parsing
 app.use(cors());
@@ -26,90 +26,21 @@ app.get("/", (req, res) => {
   res.send(listEndpoints(app));
 });
 
+// User routes
+const register = require('./routes/user/register');
+const login = require('./routes/user/login');
 
-// Get all plants
-app.get("/plants", async (req, res) => {
-  try {
-    const allPlants = await Plant.find({});
-    const response = {
-      success: true,
-      message: "All products",
-      body: allPlants
-    };
-    res.status(200).json(response);
-  } catch (e) {
-    console.error("Error:", e);
-    res.status(500).json({
-      success: false,
-      body: {
-        message: e,
-      },
-    });
-  }
-});
+// Plant routes
+const plants = require('./routes/plants/allplants')
+const singlePlant = require('./routes/plants/plantbyid')
 
-// Get all small plants
-app.get("/plants/small", async (req, res) => {
-  try {
-    const smallPlants = await Plant.find({ size: "small" });
-    const response = {
-      success: true,
-      message: `All small plants. Amount: ${smallPlants.length}`,
-      body: smallPlants
-    };
-    res.status(200).json(response);
-  } catch (e) {
-    console.error("Error:", e);
-    res.status(500).json({
-      success: false,
-      body: {
-        message: e,
-      },
-    });
-  }
-});
+// Use user routes
+app.use('/', register);
+app.use('/', login);
 
-// Get all medium plants
-app.get("/plants/medium", async (req, res) => {
-  try {
-    const mediumPlants = await Plant.find({ size: "medium" });
-    const response = {
-      success: true,
-      message: `All medium-sized plants. Amount: ${mediumPlants.length}`,
-      body: mediumPlants
-    };
-    res.status(200).json(response);
-  } catch (e) {
-    console.error("Error:", e);
-    res.status(500).json({
-      success: false,
-      body: {
-        message: e,
-      },
-    });
-  }
-});
-
-// Get all big plants
-app.get("/plants/big", async (req, res) => {
-  try {
-    const bigPlants = await Plant.find({ size: "big" });
-    const response = {
-      success: true,
-      message: `All big plants. Amount: ${bigPlants.length}`,
-      body: bigPlants
-    };
-    res.status(200).json(response);
-  } catch (e) {
-    console.error("Error:", e);
-    res.status(500).json({
-      success: false,
-      body: {
-        message: e
-      },
-    });
-  }
-});
+// Use items routes
+app.use('/', plants);
+app.use('/', singlePlant);
 
 // Start the server
 app.listen(port, () => {
