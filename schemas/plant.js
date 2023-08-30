@@ -1,9 +1,6 @@
 import mongoose from 'mongoose';
 
 const PlantSchema = new mongoose.Schema({
-    id: {
-      type: Number
-    },
     latinname: {
       type: String,
       required: true

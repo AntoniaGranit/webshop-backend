@@ -1,15 +1,15 @@
 import express from 'express';
 const router = express.Router();
-import { Plant } from '../../schemas/plant';
+import { User } from '../../schemas/user';
 
-// Get plant by id
-router.get("/plants/:id", async (req, res) => {
+// Get user profile
+router.get("/users/:id", async (req, res) => {
     try {
-      const singlePlant = await Plant.findById(req.params.id);
+      const singleUser = await User.findById(req.params.id);
       const response = {
         success: true,
-        message: 'Single plant',
-        body: singlePlant
+        message: 'User profile',
+        body: singleUser
       };
       res.status(200).json(response);
     } catch (e) {

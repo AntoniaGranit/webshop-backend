@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { Plant } from './schemas/plant';
 
 dotenv.config();
 
@@ -29,6 +28,7 @@ app.get("/", (req, res) => {
 // User routes
 const register = require('./routes/user/register');
 const login = require('./routes/user/login');
+const userProfile = require('./routes/user/userprofile');
 
 // Plant routes
 const plants = require('./routes/plants/allplants')
@@ -37,6 +37,7 @@ const singlePlant = require('./routes/plants/plantbyid')
 // Use user routes
 app.use('/', register);
 app.use('/', login);
+app.use('/', userProfile);
 
 // Use items routes
 app.use('/', plants);

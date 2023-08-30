@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 const ObjectID = mongoose.Schema.Types.ObjectId;
 
 const CartSchema = new mongoose.Schema({
-    user: {
+    owner: {
       type: ObjectID,
       required: true,
       ref: 'User'
