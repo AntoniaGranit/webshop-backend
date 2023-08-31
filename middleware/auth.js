@@ -1,4 +1,4 @@
-import { User } from './schemas/user';
+import { User } from '../schemas/user';
 
 // Authenticate user
 export const authenticateUser = async (req, res, next) => {

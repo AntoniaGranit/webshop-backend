@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 import { User } from '../../schemas/user';
-import { authenticateUser } from '../../auth';
+import { authenticateUser } from '../../middleware/auth';
 
 // Get user profile
 router.get("/users/:id", authenticateUser, async (req, res) => {

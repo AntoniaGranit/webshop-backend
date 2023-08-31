@@ -2,17 +2,18 @@ import express from 'express';
 const router = express.Router();
 import { Cart } from '../../schemas/cart';
 import { User } from '../../schemas/user';
-import { authenticateUser } from '../../auth';
+import { authenticateUser } from '../../middleware/auth';
 
 // Get plant by user id
 router.get("/cart", authenticateUser, async (req, res) => {
     try {
-      const singleUser = await User.findById(req.params.id);
-      const userCart = await Cart.findOne({ owner: singleUser });
+      const accessToken = req.header("Authorization");
+      const userId = await User.findOne({accessToken: accessToken});
+      const userCart = await Cart.findOne({ owner: userId });
       if (!userCart) {
         return res.status(404).json({ 
           message: 'Cart is empty',
-          success: false 
+          success: false
         });
       }
       const response = {

@@ -1,14 +1,18 @@
 import express from 'express';
 const router = express.Router();
 import { Cart } from '../../schemas/cart';
+import { User } from '../../schemas/user';
+import { Plant } from '../../schemas/plant';
+import { authenticateUser } from '../../middleware/auth';
 
-router.delete('/cart/remove/:plantId', async (req, res) => {
+router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
     try {
-      const userId = req.user._id;
-      const plantId = req.params.plantId;
+      const accessToken = req.header("Authorization");
+      const singleUser = await User.findOne({accessToken: accessToken}); // Get the user ID connected to the cart
+      const plantId = await Plant.findById(req.params.id); // Get ID of plant user wants to add to cart
   
       // Find the user's cart
-      let cart = await Cart.findOne({ owner: userId });
+      let cart = await Cart.findOne({ owner: singleUser });
   
       // If the cart doesn't exist, return an error
       if (!cart) {
@@ -16,11 +20,11 @@ router.delete('/cart/remove/:plantId', async (req, res) => {
       }
   
       // Find the index of the item in the cart
-      const plantIndex = cart.items.findIndex(item => item.plantItem.toString() === plantId);
+      const plant = await Plant.findById(plantId);
   
       // If the plant is in the cart, remove it
-      if (plantIndex !== -1) {
-        cart.items.splice(plantIndex, 1);
+      if (plant !== -1) {
+        cart.items.splice(plant, 1);
         await cart.save();
         res.json(cart);
       } else {

@@ -36,8 +36,8 @@ const singlePlant = require('./routes/plants/plantbyid')
 
 // Cart routes
 const getCart = require('./routes/cart/getcart');
-// const addItem = require('./routes/cart/additem');
-// const removeItem = require('./routes/cart/removeitem');
+const addItem = require('./routes/cart/additem');
+const removeItem = require('./routes/cart/removeitem');
 
 // Use user routes
 app.use('/', register);
@@ -50,8 +50,8 @@ app.use('/', singlePlant);
 
 // Use cart routes
 app.use('/', getCart);
-// app.use('/', addItem);
-// app.use('/', removeItem);
+app.use('/', addItem);
+app.use('/', removeItem);
 
 // Start the server
 app.listen(port, () => {

@@ -1,25 +1,28 @@
 import express from 'express';
 const router = express.Router();
 import { Cart } from '../../schemas/cart';
+import { User } from '../../schemas/user';
 import { Plant } from '../../schemas/plant';
+import { authenticateUser } from '../../middleware/auth';
 
-router.post('/cart/add/:plantId', async (req, res) => {
+router.post('/cart/add/:id', authenticateUser, async (req, res) => {
     try {
-      const userId = req.user._id; // Get the user ID connected to the cart
-      const plantId = req.params.plantId; // Get ID of plant user wants to add to cart
+      const accessToken = req.header("Authorization");
+      const singleUser = await User.findOne({accessToken: accessToken}); // Get the user ID connected to the cart
+      const plantId = await Plant.findById(req.params.id); // Get ID of plant user wants to add to cart
   
-      // Check if the plant item exists
+      // // Check if the plant item exists
       const plant = await Plant.findById(plantId);
       if (!plant) {
         return res.status(404).json({ message: 'Item not found' });
       }
   
       // Find the user's cart
-      let cart = await Cart.findOne({ owner: userId });
+      let cart = await Cart.findOne({ owner: singleUser });
   
       // If the cart doesn't exist, create a new one
       if (!cart) {
-        cart = new Cart({ owner: userId, items: [] });
+        cart = new Cart({ owner: singleUser, items: [] });
       }
   
       // Check if the item is already in the cart
