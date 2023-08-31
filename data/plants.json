@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "latinname": "Dracaena Fragrans",
         "size": "small",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035808/webshop/small/dracaenafragrans_fbknif.jpg",
@@ -8,7 +7,6 @@
         "description": "Elevate your space with Dracaena Fragrans. Its glossy green leaves bring an air of sophistication. Thrives in moderate light, requiring minimal maintenance. A perfect blend of elegance and ease for your indoor oasis. Ideal for enthusiasts seeking both style and simplicity."
     },
     {
-        "id": 2,
         "latinname": "Aphelandra White Wash",
         "size": "small",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035808/webshop/small/aphelandrawhitewash_v5whxw.jpg",
@@ -16,7 +14,6 @@
         "description": "Aphelandra White Wash boasts lush green leaves intricately adorned with delicate white patterns. Place in bright, indirect light and maintain regular humidity for optimal growth. An ideal choice for both aesthetic appeal and easy maintenance."
     },
     {
-        "id": 3,
         "latinname": "Scindapsus Pictus 'Trebie'",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035822/webshop/medium/scindapsuspictustrebie_gwcmno.jpg",
@@ -24,7 +21,6 @@
         "description": "Experience natural artistry with heart-shaped leaves painted in silver and green. Adaptable to various light conditions. Water when the top inch of soil is dry. An exquisite choice for your green haven."
     },
     {
-        "id": 4,
         "latinname": "Scindapsus Pictus",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035821/webshop/medium/scindapsuspictus_hrh0hc.jpg",
@@ -32,7 +28,6 @@
         "description": "Unveil nature's masterpiece with striking heart-shaped leaves adorned in silver and green. Thrives in diverse light conditions. Water when the top inch of soil is dry. Elevate your space with this botanical gem."
     },
     {
-        "id": 5,
         "latinname": "Zamioculcas Zamiifolia",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035821/webshop/medium/zamioculcaszamiifolia_obvzwf.jpg",
@@ -40,7 +35,6 @@
         "description": "Glossy, succulent-like foliage adds allure. Flourishes in low light, minimal watering needed. A resilient, stylish addition to your indoor collection, elevating your space with unique charm and easy care."
     },
     {
-        "id": 6,
         "latinname": "Variagated Monstera Deliciosa",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035821/webshop/medium/variagatedmonstera_mjhkna.jpg",
@@ -48,7 +42,6 @@
         "description": "Exquisite variegation makes each leaf a masterpiece. Its alluring patterns thrive in moderate light, allowing soil intervals between watering. Elevate your collection with this gem, adding distinct, low-maintenance charm to your botanical haven."
     },
     {
-        "id": 7,
         "latinname": "Sansevieria",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035820/webshop/medium/sansevieria_muruvr.jpg",
@@ -56,7 +49,6 @@
         "description": "Renowned as the Snake Plant, it showcases resilient, upright leaves with distinctive patterns. Flourishes in low light, water when soil is dry. A perfect addition for stylish, easy-care greenery enthusiasts."
     },
     {
-        "id": 8,
         "latinname": "Monstera Minima",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035819/webshop/medium/monsteraminima_lwne84.jpg",
@@ -64,7 +56,6 @@
         "description": "Recognized as the Mini Monstera, it boasts petite split leaves on trailing vines. Flourishes in bright, indirect light, water when top inch of soil is dry. Ideal for compact spaces, appealing to minimal-care plant lovers."
     },
     {
-        "id": 9,
         "latinname": "Philodendron Verrucosum",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035819/webshop/medium/philodendronverrucosum_hiii3n.jpg",
@@ -72,7 +63,6 @@
         "description": "With heart-shaped leaves showcasing deep green hues and a luxuriously velvet texture, Philodendron Verrucosum adds opulent elegance. Flourishing under bright, indirect light and a bit of humidity, it's a must-have for those captivated by lush, distinctive foliage."
     },
     {
-        "id": 10,
         "latinname": "Monstera Obliqua",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035819/webshop/medium/monsteraobliqua_vztsbu.jpg",
@@ -80,7 +70,6 @@
         "description": "Delicate and captivating, Monstera Obliqua's intricate fenestrated leaves resemble nature's lacework. Flourishing in bright, indirect light and reveling in increased humidity, it's a must-have for those enchanted by its airy and artistic foliage."
     },
     {
-        "id": 11,
         "latinname": "Peperomia Polybotria",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035819/webshop/medium/peperomiapolybotrya_d50vqm.jpg",
@@ -88,7 +77,7 @@
         "description": "Also known as the Raindrop Peperomia, it showcases compact green leaves, adding understated charm. Flourishes in bright, indirect light, and prefers moderate watering. An excellent choice for plant lovers who value its unique, easy-care nature."
     },
     {
-        "id": 12,
+
         "latinname": "Philodendron 'White Measure'",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035819/webshop/medium/philodendronwhitemeasure_dnimis.jpg",
@@ -96,7 +85,6 @@
         "description": "The Philodendron White Measure showcases lush green leaves accentuated by elegant white veins. Flourishing in moderate light and with a preference for regular watering, it's a refined choice for enthusiasts who admire its sophisticated allure."
     },
     {
-        "id": 13,
         "latinname": "Alocasia Macrorrhiza",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035817/webshop/medium/alocasiamacrorrhiza_sv2yys.jpg",
@@ -104,7 +92,6 @@
         "description": "Known as the Elephant Ear, this plant captivates with its grand heart-shaped leaves that demand attention. Flourishing in bright, indirect light and thriving with regular watering, it's an impressive choice for enthusiasts who seek its bold, tropical allure to transform their living spaces."
     },
     {
-        "id": 14,
         "latinname": "Monstera Deliciosa",
         "size": "medium",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035817/webshop/medium/mediummonstera_kghm4j.jpg",
@@ -112,7 +99,6 @@
         "description": "Known for its lush, iconic split leaves, the Monstera radiates timeless allure. Flourishes in moderate light, thrives with easy, consistent watering. A popular choice for those seeking effortless, enduring beauty in their indoor sanctuary."
     },
     {
-        "id": 15,
         "latinname": "Polyscias Ming Bonsai",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035832/webshop/big/polysciasmingbonsai_xmmmyv.jpg",
@@ -120,7 +106,6 @@
         "description": "A masterpiece in your space, its intricate trunk and delicate leaves evoke ancient charm. Flourishes in bright, indirect light, requiring attentive care. An exquisite investment for those who appreciate the artistry of premium bonsai."
     },
     {
-        "id": 16,
         "latinname": "Spathiphyllum Wallisii",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035832/webshop/big/spathiphyllumwallisii_wqltrm.jpg",
@@ -128,7 +113,6 @@
         "description": "Elevate your surroundings with its elegant, white-flowered beauty. Commonly known as the Peace Lily, it thrives in low to moderate light, appreciating regular watering. An investment in refined aesthetics and tranquility for enthusiasts valuing premium botanical grace."
     },
     {
-        "id": 17,
         "latinname": "Variagated Monstera Deliciosa",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035832/webshop/big/bigvariagatedmonstera_taykfb.jpg",
@@ -136,7 +120,6 @@
         "description": "Welcome this captivating Monstera into your space. Its impressive size and stunning variegation command attention. Flourishing in bright, indirect light, and thriving with regular care, it's an extraordinary, statement-making botanical centerpiece that invites allure and sophistication."
     },
     {
-        "id": 18,
         "latinname": "Alocasia Macrorrhiza",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035831/webshop/big/bigalocasiamacrorrhiza_xipy7g.jpg",
@@ -144,7 +127,6 @@
         "description": "Embrace the grandeur of this stunning plant. Its imposing size and unique foliage captivate. Flourishing in bright, indirect light, and thriving with regular care, it's a remarkable botanical centerpiece that infuses your space with elegance and charm."
     },
     {
-        "id": 19,
         "latinname": "Philodendron Squamiferum",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035830/webshop/big/philodendronsquamiferum_ivzckv.jpg",
@@ -152,7 +134,6 @@
         "description": "Invite the allure of this magnificent plant into your space. Its impressive size and velvety red stems captivate the eye. Flourishing in bright, indirect light, and thriving with regular care, it's a captivating botanical centerpiece that adds a touch of unique elegance and sophistication."
     },
     {
-        "id": 20,
         "latinname": "Monstera Deliciosa",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035830/webshop/big/bigmonstera_amvz4d.jpg",
@@ -160,7 +141,6 @@
         "description": "Make a bold statement with its substantial size and iconic leaves. Flourishes in bright, indirect light, requires consistent care. An impressive addition that adds natural beauty and character to your space."
     },
     {
-        "id": 21,
         "latinname": "Sansevieria",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035830/webshop/big/bigsansevieria_cu09ev.jpg",
@@ -168,11 +148,10 @@
         "description": "Embrace the commanding presence of this large plant, known colloquially as the Snake Plant. Flourishing in low light conditions and resilient to neglect, it infuses your space with natural charm and minimalistic elegance."
     },
     {
-        "id": 22,
-        "latinname": "Philodendron 'Red Cherry'",
+         "latinname": "Philodendron 'Red Cherry'",
         "size": "big",
         "img": "https://res.cloudinary.com/dh943gnqh/image/upload/v1693035830/webshop/big/philodendronredcherry_dafelm.jpg",
         "price": 95,
-        "description": " Command attention with the substantial presence of this plant, showcasing vibrant red stems. Flourishing in bright, indirect light, and requiring consistent watering and occasional pruning, it becomes a captivating addition, infusing your space with a dynamic pop of color and unique elegance."
+        "description": " Command attention with the substantial presence of this plant, showcasing vibrant red stems. Flourishing in bright, indirect light, and requiring consistent watering and occasional pruning, it becomes a captivating addition, infusing your space with a dynamic pop of color and unique eleganc"
     }
 ]
