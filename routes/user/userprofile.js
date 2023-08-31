@@ -1,9 +1,10 @@
 import express from 'express';
 const router = express.Router();
 import { User } from '../../schemas/user';
+import { authenticateUser } from '../../auth';
 
 // Get user profile
-router.get("/users/:id", async (req, res) => {
+router.get("/users/:id", authenticateUser, async (req, res) => {
     try {
       const singleUser = await User.findById(req.params.id);
       const response = {

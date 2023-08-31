@@ -30,9 +30,14 @@ const register = require('./routes/user/register');
 const login = require('./routes/user/login');
 const userProfile = require('./routes/user/userprofile');
 
-// Plant routes
+// Item routes
 const plants = require('./routes/plants/allplants')
 const singlePlant = require('./routes/plants/plantbyid')
+
+// Cart routes
+const getCart = require('./routes/cart/getcart');
+// const addItem = require('./routes/cart/additem');
+// const removeItem = require('./routes/cart/removeitem');
 
 // Use user routes
 app.use('/', register);
@@ -42,6 +47,11 @@ app.use('/', userProfile);
 // Use items routes
 app.use('/', plants);
 app.use('/', singlePlant);
+
+// Use cart routes
+app.use('/', getCart);
+// app.use('/', addItem);
+// app.use('/', removeItem);
 
 // Start the server
 app.listen(port, () => {
