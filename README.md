@@ -1,5 +1,7 @@
 # Webshop backend
 
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) 
+
 This is the backend repository for a webshop hobby project I am currently working on. I originially wanted to try building it with Python, FastAPI and PostGreSQL, but since I haven't built a webshop before I wanted to first try it out in a language I know. I am glad I did, since even with Node.js, Express and MongoDB, this proved quite challenging for me. I hope to go back to the backend when I'm done with the frontend and rebuild it in Python, though.
 
 ## The problem
