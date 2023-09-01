@@ -1,11 +1,11 @@
-# Express API Starter Project
+# Webshop backend
 
-This project includes the packages and babel setup for an express server, and is just meant to make things a little simpler to get up and running with.
+This is the backend repository for a webshop hobby project I am currently working on. I originially wanted to try building it with Python, FastAPI and PostGreSQL, but since I haven't built a webshop before I wanted to first try it out in a language I know. I am glad I did, since even with Node.js, Express and MongoDB, this proved quite challenging for me. I hope to go back to the backend when I'm done with the frontend and rebuild it in Python, though.
 
-## Getting started
+## The problem
 
-Install dependencies with `npm install`, then start the server by running `npm run dev`
+Getting around the logic of creating endpoints for adding and removing items from the shopping cart was a challenge for me, as I haven't done this before. I'm still working on the structure of the shopping cart, as I want it to specify the quantity of the same product in the cart (if there's more than one) instead of just adding new objects to the shopping cart array with the quantity of one.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://webshop-backend-uglgpqyr6q-lz.a.run.app 
