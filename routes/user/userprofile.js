@@ -7,6 +7,14 @@ import { authenticateUser } from '../../middleware/auth';
 router.get("/users/:id", authenticateUser, async (req, res) => {
     try {
       const singleUser = await User.findById(req.params.id);
+      if (!singleUser) {
+        return res.status(404).json({
+          success: false,
+          body: {
+            message: 'User not found'
+          }
+        })
+      }
       const userEmail = singleUser.email;
       const response = {
         success: true,

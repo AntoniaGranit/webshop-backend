@@ -6,6 +6,14 @@ import { Plant } from '../../schemas/plant';
 router.get("/plants/:id", async (req, res) => {
     try {
       const singlePlant = await Plant.findById(req.params.id);
+      if (!singlePlant) {
+        return res.status(404).json({
+          success: false,
+          body: {
+            message: 'Plant not found'
+          }
+        })
+      }
       const plantName = singlePlant.latinname;
       const response = {
         success: true,
