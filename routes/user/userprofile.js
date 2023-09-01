@@ -7,9 +7,10 @@ import { authenticateUser } from '../../middleware/auth';
 router.get("/users/:id", authenticateUser, async (req, res) => {
     try {
       const singleUser = await User.findById(req.params.id);
+      const userEmail = singleUser.email;
       const response = {
         success: true,
-        message: 'User profile',
+        message: `User profile for user with the email ${userEmail}`,
         body: singleUser
       };
       res.status(200).json(response);

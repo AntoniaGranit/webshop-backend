@@ -6,9 +6,10 @@ import { Plant } from '../../schemas/plant';
 router.get("/plants/:id", async (req, res) => {
     try {
       const singlePlant = await Plant.findById(req.params.id);
+      const plantName = singlePlant.latinname;
       const response = {
         success: true,
-        message: 'Single plant',
+        message: `Information about the ${plantName}`,
         body: singlePlant
       };
       res.status(200).json(response);
