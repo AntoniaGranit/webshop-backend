@@ -10,8 +10,8 @@ router.post('/cart/add/:id', authenticateUser, async (req, res) => {
       const accessToken = req.header("Authorization");
       const singleUser = await User.findOne({accessToken: accessToken}); // Get the user ID connected to the cart
       const plantId = await Plant.findById(req.params.id); // Get ID of plant user wants to add to cart
-      console.log('Debug: Plant ID:', req.params.id);
       const plant = await Plant.findById(plantId);
+      
       if (!plant) {
         return res.status(404).json({ message: 'Item not found' });
       }

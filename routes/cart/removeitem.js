@@ -9,8 +9,8 @@ router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
     try {
       const accessToken = req.header("Authorization");
       const singleUser = await User.findOne({accessToken: accessToken}); // Get the user ID connected to the cart
-      const plantId = await Plant.findById(req.params.id); // Get ID of plant user wants to add to cart
-  
+      // const plantId = await Plant.findById(req.params.id); Get ID of plant user wants to add to cart
+
       // Find the user's cart
       let cart = await Cart.findOne({ owner: singleUser });
   
@@ -20,12 +20,18 @@ router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
       }
   
       // Find the index of the item in the cart
-      const plant = await Plant.findById(req.params.id);
+      const itemIndex = cart.items.findIndex(item => item.itemId.equals(req.params.id));
   
-      // If the plant is in the cart, remove it
-      if (plant !== -1) {
-        cart.items.splice(plant, 1);
+      // If the item is in the cart, decrease its quantity or remove it
+      if (itemIndex !== -1) {
+        const item = cart.items[itemIndex];
+        if (item.quantity > 1) {
+          item.quantity -= 1;
+        } else {
+          cart.items.splice(itemIndex, 1);
+        }
         await cart.save();
+        await Cart.populate(cart, { path: 'items.itemId' });
         res.json(cart);
       } else {
         res.status(404).json({ message: 'Item not found in cart' });
