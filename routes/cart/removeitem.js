@@ -20,7 +20,7 @@ router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
       }
   
       // Find the index of the item in the cart
-      const plant = await Plant.findById(plantId);
+      const plant = await Plant.findById(req.params.id);
   
       // If the plant is in the cart, remove it
       if (plant !== -1) {

@@ -6,17 +6,18 @@ const CartSchema = new mongoose.Schema({
     owner: {
       type: ObjectID,
       required: true,
-      ref: 'User'
+      ref: 'User' // References the user model
     },
     items: [
         {
-            plantItem: {
+            itemId: {
                 type: ObjectID,
                 required: true,
-                ref: 'Plant'
+                ref: 'Plant' // References the Plant model
             },
             quantity: {
                 type: Number,
+                required: true,
                 default: 1,
                 min: 1
             }
