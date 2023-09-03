@@ -24,16 +24,16 @@ router.post('/cart/add/:id', authenticateUser, async (req, res) => {
         cart = new Cart({ owner: singleUser, items: [] });
       }
   
-      // Check if the item is already in the cart
+      // Check if there's already an item with the same ID in the cart
       const existingItem = cart.items.find(item => item.itemId.equals(req.params.id));
       if (existingItem) {
-        existingItem.quantity += 1; // Increase quantity of item if already in cart
+        existingItem.quantity += 1; // increase quantity of item by one if it's already in the cart
       } else {
-        cart.items.push({ itemId: plantId }); // Add item to the cart if not
+        cart.items.push({ itemId: plantId }); // using the push array method, add the item to the cart array
       }
-      await cart.save();
-      await Cart.populate(cart, { path: 'items.itemId' });
-      res.json(cart);
+      await cart.save(); // save the cart
+      await Cart.populate(cart, { path: 'items.itemId' }); // include detailed plant information in the response
+      res.json(cart); // the response with the updated cart
     } catch (error) {
       console.error('Error: Something went wrong!', error);
       res.status(500).json({ message: 'Server error' });
