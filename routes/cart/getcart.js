@@ -9,7 +9,7 @@ router.get("/cart", authenticateUser, async (req, res) => {
     try {
       const accessToken = req.header("Authorization");
       const userId = await User.findOne({accessToken: accessToken});
-      const userCart = await Cart.findOne({ owner: userId });
+      const userCart = await Cart.findOne({ owner: userId }).populate('items.itemId'); // get all information about the plants
       if (!userCart) {
         return res.status(404).json({ 
           message: 'Cart is empty',
