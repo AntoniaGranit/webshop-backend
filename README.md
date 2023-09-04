@@ -6,7 +6,7 @@ This is the backend repository for a webshop hobby project I am currently workin
 
 ## The problem
 
-Getting around the logic of creating endpoints for adding and removing items from the shopping cart was a challenge for me, as I haven't done this before. I'm still working on the structure of the shopping cart, as I want it to specify the quantity of the same product in the cart (if there's more than one) instead of just adding new objects to the shopping cart array with the quantity of one.
+Getting around the logic of creating endpoints for adding and removing items corresponding to specific items in my database to and from the shopping cart was a bit of a challenge, but MongoDB makes it quite intuitive and pain-free with its built-in functionalities. I also had some issues with the structure of the shopping cart in the response, but it all looks exactly how I want it now.
 
 ## View it live
 
