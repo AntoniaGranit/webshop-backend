@@ -1,10 +1,24 @@
+// Main imports and dependencies
 import express from 'express';
-import cors from 'cors';
 import mongoose from 'mongoose';
+import cors from 'cors';
 import dotenv from 'dotenv';
+// User route imports
+import register from './routes/user/register';
+import login from './routes/user/login';
+import userProfile from './routes/user/userprofile';
+// Item route imports
+import plants from './routes/plants/allplants';
+import singlePlant from './routes/plants/plantbyid';
+// Cart route imports
+import getCart from './routes/cart/getcart';
+import addItem from './routes/cart/additem';
+import removeItem from './routes/cart/removeitem';
 
+// Load environment variables from .env file
 dotenv.config();
 
+// Database connection
 const mongoUrl = process.env.MONGO_URL || "mongodb://localhost/webshop-backend";
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = Promise;
@@ -20,24 +34,10 @@ dotenv.config();
 app.use(cors());
 app.use(express.json());
 
-// Routes
+// Index route: list all endpoints
 app.get("/", (req, res) => {
   res.send(listEndpoints(app));
 });
-
-// User routes
-const register = require('./routes/user/register');
-const login = require('./routes/user/login');
-const userProfile = require('./routes/user/userprofile');
-
-// Item routes
-const plants = require('./routes/plants/allplants')
-const singlePlant = require('./routes/plants/plantbyid')
-
-// Cart routes
-const getCart = require('./routes/cart/getcart');
-const addItem = require('./routes/cart/additem');
-const removeItem = require('./routes/cart/removeitem');
 
 // Use user routes
 app.use('/', register);

@@ -1,9 +1,11 @@
 import express from 'express';
-const router = express.Router();
 import { Cart } from '../../schemas/cart';
 import { User } from '../../schemas/user';
 import { authenticateUser } from '../../middleware/auth';
 
+const router = express.Router();
+
+// Remove item from cart
 router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
     try {
       const accessToken = req.header("Authorization");
@@ -39,4 +41,4 @@ router.delete('/cart/remove/:id', authenticateUser, async (req, res) => {
     }
   });
   
-  module.exports = router;
+export default router;

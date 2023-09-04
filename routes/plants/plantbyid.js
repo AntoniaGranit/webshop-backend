@@ -1,6 +1,7 @@
 import express from 'express';
-const router = express.Router();
 import { Plant } from '../../schemas/plant';
+
+const router = express.Router();
 
 // Get plant by id
 router.get("/plants/:id", async (req, res) => {
@@ -32,4 +33,4 @@ router.get("/plants/:id", async (req, res) => {
     }
   });
 
-module.exports = router;
+export default router;

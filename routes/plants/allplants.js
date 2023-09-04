@@ -1,6 +1,7 @@
 import express from 'express';
-const router = express.Router();
 import { Plant } from '../../schemas/plant';
+
+const router = express.Router();
 
 // Get all plants
 router.get("/plants", async (req, res) => {
@@ -23,4 +24,4 @@ router.get("/plants", async (req, res) => {
     }
   });
 
-module.exports = router;
+export default router;

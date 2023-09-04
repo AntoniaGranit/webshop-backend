@@ -1,7 +1,8 @@
 import express from 'express';
-const router = express.Router();
 import { User } from '../../schemas/user';
 import { authenticateUser } from '../../middleware/auth';
+
+const router = express.Router();
 
 // Get user profile
 router.get("/users/:id", authenticateUser, async (req, res) => {
@@ -33,4 +34,4 @@ router.get("/users/:id", authenticateUser, async (req, res) => {
     }
   });
 
-module.exports = router;
+export default router;

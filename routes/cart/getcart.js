@@ -1,10 +1,11 @@
 import express from 'express';
-const router = express.Router();
 import { Cart } from '../../schemas/cart';
 import { User } from '../../schemas/user';
 import { authenticateUser } from '../../middleware/auth';
 
-// Get plant by user id
+const router = express.Router();
+
+// Get user's cart
 router.get("/cart", authenticateUser, async (req, res) => {
     try {
       const accessToken = req.header("Authorization");
@@ -33,4 +34,4 @@ router.get("/cart", authenticateUser, async (req, res) => {
     }
   });
 
-module.exports = router;
+export default router;

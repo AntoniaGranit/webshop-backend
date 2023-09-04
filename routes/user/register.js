@@ -4,6 +4,7 @@ import { User } from '../../schemas/user';
 
 const router = express.Router();
 
+// Register user
 router.post("/register", async (req, res) => {
     const { email, password } = req.body;
     try {
@@ -31,4 +32,4 @@ router.post("/register", async (req, res) => {
     }
   });
 
-  module.exports = router;
+export default router;
